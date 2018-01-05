@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Admin Panel | Home</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom CSS -->
+    <link href="css/styleAdmin.css" rel='stylesheet' type='text/css'/>
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css'/>
+    <!-- //lined-icons --><link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Meters graphs -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="script/admin.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+
+</head>
+<body class="sticky-header left-side-collapsed"
+      onload="checkPresAdmin(); getlogin(); countUsers(); countOrders(); totalAllOrders(); countMenu()">
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <h1><a href="admin.html"><span>Admin</span></a></h1>
+        </div>
+        <div class="logo-icon text-center">
+            <a href="admin.html"><i class="lnr lnr-home"></i> </a>
+        </div>
+
+        <!--logo and iconic logo end-->
+        <div class="left-side-inner">
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="food.html"><i class="lnr lnr-spell-check"></i> <span>Food actions</span></a></li>
+                <li><a href="users.html"><i class="lnr lnr-menu"></i> <span>Users</span></a></li>
+                <li class="menu-list"><a href="main.html"><i class="lnr lnr-book"></i> <span>Pages</span></a>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+    <!-- main content start-->
+    <div class="main-content">
+        <!-- header-starts -->
+        <div class="header-section">
+            <div class="menu-right">
+                <div class="user-panel-top">
+                    <div class="profile_details">
+                        <ul>
+
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+                                        <div id="userName" class="userName_"></div>
+                                        <i class="lnr lnr-chevron-down"></i>
+                                        <i class="lnr lnr-chevron-up"></i>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li><a href="api/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--notification menu end -->
+        </div>
+        <!-- //header-ends -->
+        <div id="page-wrapper">
+            <div class="graphs">
+                <div class="col_3">
+                    <div class="col-md-3 widget widget1">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-mail-forward"></i>
+                            <div class="stats">
+                                <h5>
+                                    <div id="countOrder"></div>
+                                    <span></span></h5>
+                                <div class="grow">
+                                    <p>Count orders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 widget widget1">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-users"></i>
+                            <div class="stats">
+                                <h5>
+                                    <div id="countUser"></div>
+                                    <span></span></h5>
+                                <div class="grow grow1">
+                                    <p>Count users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 widget widget1">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-eye"></i>
+                            <div class="stats">
+                                <h5>
+                                    <div id="countMenu"></div>
+                                    <span></span></h5>
+                                <div class="grow grow3">
+                                    <p>Count menu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 widget">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-usd"></i>
+                            <div class="stats">
+                                <h5>
+                                    <div id="totalOrder"></div>
+                                    <span></span></h5>
+                                <div class="grow grow2">
+                                    <p>Total orders</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <!--body wrapper start-->
+            </div>
+            <!--body wrapper end-->
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

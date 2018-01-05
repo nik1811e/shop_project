@@ -1,0 +1,366 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is my api. Try this :D",
+    "version": "v1",
+    "title": "Kurs-shop API"
+  },
+  "host": "localhost",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "login",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "auth"
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "register",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserR"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "auth"
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "logout",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "auth"
+      }
+    },
+    "/auth/deluser": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "deluser",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserD"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "auth"
+      }
+    },
+    "/menu/addfood": {
+      "post": {
+        "tags": [
+          "Menu"
+        ],
+        "operationId": "addfood",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Menu"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "menu"
+      }
+    },
+    "/menu/delFood": {
+      "delete": {
+        "tags": [
+          "Menu"
+        ],
+        "operationId": "delfood",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuD"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "menu"
+      }
+    },
+    "/menu/updatefood": {
+      "post": {
+        "tags": [
+          "Menu"
+        ],
+        "operationId": "updatefood",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Menu"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "menu"
+      }
+    },
+    "/order/tocart": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "operationId": "tocart",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Orders"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "order"
+      }
+    },
+    "/order/delallfromcart": {
+      "delete": {
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Orders"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "order"
+      }
+    },
+    "/order/itemcart": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Orders"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "order"
+      }
+    },
+    "/order/historyorder": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Orders"
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "order"
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "UserR": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        }
+      }
+    },
+    "UserD": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "Menu": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "type_food": {
+          "type": "string"
+        }
+      }
+    },
+    "MenuD": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Orders": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

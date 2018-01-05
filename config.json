@@ -1,0 +1,23 @@
+{
+  "db": {
+    "host": "127.0.0.1",
+    "name": "KursShop",
+    "user": "root",
+    "password": "",
+    "port": "3306",
+    "dialect": "mysql"
+  },
+  "db_heroku": {
+    "host": "ec2-54-225-68-71.compute-1.amazonaws.com",
+    "name": "dimrk9ecemlj2",
+    "user": "omqnmlyvfkbwfb",
+    "password": "be75adaccc7f130e0ea4ba65a2bdf97223eaf28351c425e26e7195a2c4ee9c59",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "env": "dev",
+  "cookie": {
+    "key": "secret key",
+    "auth": "x-access-token"
+  }
+}

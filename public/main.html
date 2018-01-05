@@ -1,0 +1,173 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Welcome to Gourmet</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script src="js/GetUsers.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' media="all"/>
+    <!-- //bootstrap -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all"/>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/modernizr.custom.53451.js"></script>
+    <script src="js/classie.js"></script>
+    <!--start-smoth-scrolling-->
+    <!--webfonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+    <!--webfonts-->
+    <link href="css/component.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+    <script type="text/javascript" src="script/menu.js"></script>
+
+
+    <!-- start-smoth-scrolling -->
+</head>
+<body class="cbp-spmenu-push" onload="getlogin(); countCart(); totalOrder(); checkPres()">
+
+<!--header-->
+<div class="header-section">
+    <div class="container">
+        <div class="header-top">
+            <div class="top-nav">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s2">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="main.html">Home</a></li>
+                        <li class="menu">Menu</li>
+                        <ul class="cl-effect-1">
+                            <li><a href="base.html">Main menu</a></li>
+                            <li><a href="breakfast.html">Breakfast</a></li>
+                            <li><a href="desserts.html">Desserts</a></li>
+                            <li><a href="drinkables.html">Drinkables</a></li>
+                        </ul>
+                        <!-- script-for-menu -->
+                        <script>
+                            $("li.menu").click(function () {
+                                $("ul.cl-effect-1").slideToggle(300, function () {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                        <li><a href="orders.html">Orders</a></li>
+                        <li><a onclick="logout()">Log out</a></li>
+                    </ul>
+                </nav>
+                <div class="main buttonset">
+
+                    <button id="showRightPush"><img src="images/menu.png" alt=""/></button>
+                    <!--<span class="menu"></span>-->
+                </div>
+                <script>
+                    var menuRight = document.getElementById('cbp-spmenu-s2'),
+                        showRightPush = document.getElementById('showRightPush'),
+                        body = document.body;
+
+                    showRightPush.onclick = function () {
+                        classie.toggle(this, 'active');
+                        classie.toggle(body, 'cbp-spmenu-push-toleft');
+                        classie.toggle(menuRight, 'cbp-spmenu-open');
+                        disableOther('showRightPush');
+                    };
+
+                    function disableOther(button) {
+                        if (button !== 'showRightPush') {
+                            classie.toggle(showRightPush, 'disabled');
+                        }
+                    }
+                </script>
+            </div>
+
+            <div class="header-logo">
+                <a href="main.html"><img src="images/logo.png" alt=""/></a>
+            </div>
+
+            <div class="search-form">
+                <div id="userName" class="userName_"></div>
+                <form action="/api/auth/logout" method="get">
+                    <div class="contact-form">
+                        <input type="submit" value="Log out">
+                    </div>
+                </form>
+                <div class="cart_info">
+                    <div id="countOrder"></div>
+                    <div id="totalOrder"></div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="header-grids">
+                <div class="col-md-3 header-grid-info">
+                    <a href="base.html">
+                        <div class="header-grid gray">
+                            <div class="header-grid-img gray-grid">
+                                <img src="images/2.jpg" alt="">
+                                <h3>Main menu</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    neque erat, iaculis faucibus laoreet nec
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 header-grid-info">
+                    <a href="breakfast.html">
+                        <div class="header-grid">
+                            <div class="header-grid-img">
+                                <img src="images/Br.jpg" alt="">
+                                <h3>Breakfast</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    neque erat, iaculis faucibus laoreet nec
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 header-grid-info">
+                    <a href="desserts.html">
+                        <div class="header-grid red">
+                            <div class="header-grid-img red-grid">
+                                <img src="images/des.png" alt="">
+                                <h3>Desserts</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    neque erat, iaculis faucibus laoreet nec
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 header-grid-info">
+                    <a href="drinkables.html">
+                        <div class="header-grid blue">
+                            <div class="header-grid-img blue-grid">
+                                <img src="images/Dr.png" alt="">
+                                <h3>Drinkables</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    neque erat, iaculis faucibus laoreet nec
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/header-->
+</body>
+</html>

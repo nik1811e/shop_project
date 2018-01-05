@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Admin Panel | Food</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom CSS -->
+    <link href="css/styleAdmin.css" rel='stylesheet' type='text/css'/>
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css'/>
+    <!-- //lined-icons -->
+    <!-- chart -->
+    <!-- //chart -->
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <!--//end-animate-->
+    <!----webfonts--->
+    <!---//webfonts--->
+    <!-- Meters graphs -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="script/admin.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+
+</head>
+
+<body class="sticky-header left-side-collapsed" onload="getlogin(); getAllMenu()">
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <h1><a href="admin.html"><span>Admin</span></a></h1>
+        </div>
+        <div class="logo-icon text-center">
+            <a href="admin.html"><i class="lnr lnr-home"></i> </a>
+        </div>
+
+        <!--logo and iconic logo end-->
+        <div class="left-side-inner">
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="food.html"><i class="lnr lnr-spell-check"></i> <span>Food actions</span></a></li>
+                <li><a href="users.html"><i class="lnr lnr-menu"></i> <span>Users</span></a></li>
+                <li class="menu-list"><a href="main.html"><i class="lnr lnr-book"></i> <span>Pages</span></a>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content main-content4">
+        <!-- header-starts -->
+        <div class="header-section">
+            <div class="menu-right">
+                <div class="user-panel-top">
+                    <div class="profile_details">
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+                                        <div id="userName" class="userName_"></div>
+                                        <i class="lnr lnr-chevron-down"></i>
+                                        <i class="lnr lnr-chevron-up"></i>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li><a href="api/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--notification menu end -->
+        </div>
+        <!-- //header-ends -->
+        <div id="page-wrapper">
+            <div class="graphs">
+                <br/>
+                <div>
+                    <input type="text" id="nameFood" placeholder="Name">
+                    <input type="text" id="priceFood" placeholder="Price">
+                    <!--<input type="text" id="typeFood" placeholder="Type">-->
+                    <select id="typeFood" title="Тип меню">
+                        <option>basemenu</option>
+                        <option>breakfast</option>
+                        <option>desserts</option>
+                        <option>drinkables</option>
+                    </select>
+                    <input type="button" id="btnAddFood" class="btn-success btn" value="Add">
+                    <!--TODO: Update button-->
+                    <!--<input type="button" id="btnUpdateFood" value="Update">-->
+                    <input type="button" id="btnClearFood" class="btn-inverse btn" value="Clear">
+                </div>
+                <br/>
+                <h3 class="blank1">Food</h3>
+                <div class="xs tabls">
+                    <div class="bs-example4" data-example-id="contextual-table">
+                        <table class="table" id="foodTable"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!--Обновление пользователя-->
+<div id="modal_form" class="update_food"><!-- Сaмo oкнo -->
+    <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
+    <!-- Тут любoе сoдержимoе -->
+    <br/>
+    <h4>Update food</h4>
+    <br/>
+    <input class="text-primary" style="width: 100%" type='text' id='nameF' size='10' value='' placeholder='Name'> <br/>
+    <input class="text-primary" style="width: 100%" type='text' id='priceF' size='10' value='' placeholder='Price'> <br/>
+    <select style="width: 100%" id="typeFoodF" title="Type food">
+        <option>basemenu</option>
+        <option>breakfast</option>
+        <option>desserts</option>
+        <option>drinkables</option>
+    </select>
+    <br/>
+    <br>
+    <input id="updateF" class="btn-success" type="button" value="Update"  onclick="updateFood()">
+</div>
+<div id="overlay"></div><!-- Пoдлoжкa -->
+</body>
+</html>

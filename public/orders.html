@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gourmet | Orders</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' media="all"/>
+    <!-- //bootstrap -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all"/>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/modernizr.custom.53451.js"></script>
+    <!--start-smoth-scrolling-->
+    <!--webfonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+    <!--webfonts-->
+    <link href="css/component.css" rel="stylesheet" type="text/css"/>
+    <link href="css/table.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="script/menu.js"></script>
+    <script type="text/javascript" src="script/orders.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+
+</head>
+<body onload="countCart(); totalOrder(); getlogin(); getItemCart(); getHistoryOrder();">
+<div class="alert alert-success">
+    <div class="form-group">
+        <a href="main.html"><img src="/images/home.ico" style="height: 35px; width: 35px;"/></a>
+        <div id="userName" class="userName_"></div>
+        <div id="countOrder"></div>
+        <div id="totalOrder"></div>
+    </div>
+</div>
+<div class="alert">
+    <h1>Товары в корзине</h1>
+    <table id="cartTable" class="bordered"></table>
+
+    <input type="submit" id="buttonPay" value="Pay all">
+
+    <h1>История заказов</h1>
+    <table id="histiryCart" class="bordered"></table>
+</div>
+</body>
+</html>
